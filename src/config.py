@@ -1,2 +1,2 @@
 DEBUG = True
-ADMINS = frozenset(["mail@domain.com","omar@test2.com"])
+ADMINS = frozenset(["omar_nour@hotmail.com","omar@test2.com"])
