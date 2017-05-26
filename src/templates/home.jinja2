@@ -1,0 +1,9 @@
+{% extends "base.jinja2" %}
+{% block content %}
+    <div class="jumbotron">
+        <h1>Price Alerting Service</h1>
+        <p> We scan online stores to alerts you when prices drops!</p>
+        <p> Just sing up..</p>
+        <p><a class="btn btn-primary btn-lg" href="{{ url_for('users.register_user') }}" role="button">Sing up</a></p>
+    </div>
+{% endblock %}
