@@ -17,7 +17,7 @@ def init_db():
 
 @app.route('/')
 def home():
-    if 'email' in session.keys() and session['email'] is None:
+    if ('email' in session.keys() and session['email'] is None) or 'email' not in session.keys():
         return render_template('home.jinja2')
     else:
         return redirect(url_for('users.user_alerts'))
