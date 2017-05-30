@@ -1,7 +1,7 @@
 import uuid
 
 from src.common.database import Database
-import src.models.stores.constants as StoreConstansts
+import src.models.stores.constants as StoreConstants
 import src.models.stores.errors as StoreErrors
 
 
@@ -28,18 +28,18 @@ class Store(object):
                 }
 
     def delete(self):
-        Database.remove(StoreConstansts.COLLECTION, {'_id': self._id})
+        Database.remove(StoreConstants.COLLECTION, {'_id': self._id})
 
     @classmethod
     def all(cls):
-        return [cls(**elem) for elem in Database.find(StoreConstansts.COLLECTION, {})]
+        return [cls(**elem) for elem in Database.find(StoreConstants.COLLECTION, {})]
 
     @classmethod
     def get_by_id(cls, id):
-        return cls(**Database.find_one(StoreConstansts.COLLECTION, {"_id": id}))
+        return cls(**Database.find_one(StoreConstants.COLLECTION, {"_id": id}))
 
     def save_to_mongo(self):
-        Database.update(StoreConstansts.COLLECTION, {'_id': self._id}, self.json())
+        Database.update(StoreConstants.COLLECTION, {'_id': self._id}, self.json())
 
     @classmethod
     def get_by_name(cls, store_name):
